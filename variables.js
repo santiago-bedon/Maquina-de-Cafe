@@ -17,7 +17,7 @@ const azucar = 5;
 let cafeConLechePrecio = 3000;
 
 // Te
-const te = 2;
+const te = 10;
 const agua = 200;
 const azucar = 5;
 let tePrecio = 2000;
@@ -62,10 +62,89 @@ let billete10000 = 50;
 
 let saldo = 2000;
 
-// Proceso
+// Proceso tinto 
 
-if saldo >= tintoPrecio
---vasos
-if (cafe >= cafe &&
-    azucar >= azucar&&
-    agua >= agua) 
+if (saldo >= tintoPrecio &&
+    cafeGr >= 10 &&
+    azucarGr >= 5 &&
+    aguaMl >= 150 &&
+    vasos >= 1) 
+
+    // Descontar ingredientes
+    cafeGr = cafeGr - 10;
+    azucarGr = azucarGr - 5;
+    aguaMl = aguaMl - 150;
+    vasos = vasos - 1;
+
+    // Calcular vueltas
+    let vueltas = saldo - tintoPrecio;
+
+// Proceso Cafe con leche
+
+if (saldo >= cafeConLechePrecio &&
+    cafeGr >= 10 &&
+    azucarGr >= 5 &&
+    aguaMl >= 150 &&
+    vasos >= 1)
+
+    // Descontar ingredientes
+    cafeGr = cafeGr - 10;
+    azucarGr = azucarGr - 5;
+    lecheMl = lecheMl - 150;
+    vasos = vasos - 1;
+
+    // Calcular vueltas
+    let vueltas = saldo - cafeConLechePrecio;
+
+    // Proceso Te
+
+if (saldo >= tePrecio &&
+    teGr >= 10 &&
+    azucarGr >= 5 &&
+    aguaMl >= 200 &&
+    vasos >= 1)
+
+    // Descontar ingredientes
+    teGr = teGr - 10;
+    azucarGr = azucarGr - 5;
+    aguaMl = aguaMl - 200;
+    vasos = vasos - 1;
+
+    // Calcular vueltas
+    let vueltas = saldo - tePrecio;
+
+    // Proceso Moccacino
+
+if (saldo >= mocaccinoPrecio &&
+    cafeGr >= 10 &&
+    chocolateGr >= 15 &&
+    aguaMl >= 50 &&
+    lecheMl >= 100 &&
+    vasos >= 1)
+
+    // Descontar ingredientes
+    cafeGr = cafeGr - 10;
+    azucarGr = azucarGr - 5;
+    aguaMl = aguaMl - 50;
+    lecheMl = lecheMl - 100;
+    vasos = vasos - 1;
+
+    // Calcular vueltas
+    let vueltas = saldo - mocaccinoPrecio;
+
+    // Proceso Cafe Descafeinado
+
+if (saldo >= cafeDescafeinadoPrecio &&
+    cafeDescafeinadoGr >= 10 &&
+    azucarGr >= 5 &&
+    aguaMl >= 150 &&
+    vasos >= 1) 
+
+    // Descontar ingredientes
+    cafedescafeinadoGr = cafedecafeinadoGr - 10;
+    azucarGr = azucarGr - 5;
+    aguaMl = aguaMl - 150;
+    vasos = vasos - 1;
+
+    // Calcular vueltas
+    let vueltas = saldo - cafeDescafeinadoPrecio;
