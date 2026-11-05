@@ -5,34 +5,34 @@ const mocaccino = "Mocaccino";
 const cafeDescafeinado = "Cafe descafeinado";
 
 // Tinto
-const cafe = 10;
-const agua = 150;
-const azucar = 5;
+const cafeTinto = 10;
+const aguaTinto = 150;
+const azucarTinto = 5;
 let tintoPrecio = 2000;
 
 // Cafe con leche
-const cafe = 10;
-const leche = 100;
-const azucar = 5;
+const cafeCcl = 10;
+const lecheCcl = 100;
+const azucarCcl = 5;
 let cafeConLechePrecio = 3000;
 
 // Te
-const te = 10;
-const agua = 200;
-const azucar = 5;
+const teTe = 10;
+const aguaTe = 200;
+const azucarTe = 5;
 let tePrecio = 2000;
 
 // Mocaccino
-const cafe = 10;
-const chocolate = 15;
-const leche = 100;
-const agua = 50;
+const cafeMoca = 10;
+const chocolateMoca = 15;
+const lecheMoca = 100;
+const aguaMoca = 50;
 let mocaccinoPrecio = 4000;
 
 // Cafe descafeinado
-const cafeDescafeinado = 10;
-const agua = 150;
-const azucar = 5;
+const cafeDescafeinadoCdesca = 10;
+const aguaCdesca = 150;
+const azucarCdesca = 5;
 let cafeDescafeinadoprecio = 2500;
 
 // Inventario
@@ -64,15 +64,23 @@ let saldo = 2000;
 
 // Selecionar bebida
 
- // switch para un futuro switch (key) {case 1:break;case 2:break;case 3:break;case 4:breakcase 5:break;;default:break;
+let menu =parseInt(prompt("Elige tu bebida"));
 
-// Proceso tinto 
+ switch (menu) {
+    case 1:
+      
+    // Proceso tinto
+    
+    alert("Tinto")
 
-if (saldo >= tintoPrecio && cafeGr >= 10 && azucarGr >= 5 && aguaMl >= 150 && vasos >= 1 &&)
+if (saldo >= tintoPrecio && cafeGr >= 10 && azucarGr >= 5 && aguaMl >= 150 && vasos >= 1 )
 
     // Descontar ingredientes 
     {
-        cafeGr = cafeGr - 10 && azucarGr = azucarGr - 5 && aguaMl = aguaMl - 150 && vasos = vasos - 1
+        cafeGr = cafeGr - 10;
+         azucarGr = azucarGr - 5;
+          aguaMl = aguaMl - 150;
+           vasos = vasos - 1
         console.log("Preparando tinto")
     }
 
@@ -80,15 +88,21 @@ else {
     console.log( "No se puede preparar el tinto sorry");
     }
 
-    // Calcular vueltas
-    let vueltas = saldo - tintoPrecio;
+        break;
 
-// Proceso Cafe con leche
+    case 2:
+    
+    // Proceso Cafe con leche
+
+    alert("Cafe con leche")
 
 if (saldo >= cafeConLechePrecio && cafeGr >= 10 && azucarGr >= 5 && aguaMl >= 150 && vasos >= 1)
     // Descontar ingredientes
     {
-        cafeGr = cafeGr - 10 && azucarGr = azucarGr - 5 && lecheMl = lecheMl - 150 && vasos = vasos - 1
+        cafeGr = cafeGr - 10;
+         azucarGr = azucarGr - 5;
+          lecheMl = lecheMl - 150;
+           vasos = vasos - 1
         console.log("Preparando Cafe con leche")
     }
 
@@ -96,15 +110,21 @@ else{
     console.log( "No se puede preparar el cafe con leche sorry");
     }
 
-    // Calcular vueltas
-    let vueltas = saldo - cafeConLechePrecio;
+        break;
 
-// Proceso Te
+    case 3:
+
+    // Proceso Te
+
+    alert("Te")
 
 if (saldo >= tePrecio && teGr >= 10 && azucarGr >= 5 && aguaMl >= 200 && vasos >= 1)
     // Descontar ingredientes
     {
-        teGr = teGr - 10 && azucarGr = azucarGr - 5 && aguaMl = aguaMl - 200 && vasos = vasos - 1 
+        teGr = teGr - 10;
+         azucarGr = azucarGr - 5;
+          aguaMl = aguaMl - 200;
+           vasos = vasos - 1 
         console.log("Preparando Te")
     }
 
@@ -112,15 +132,21 @@ else {
     console.log( "No se puede preparar el te sorry");
     }
 
-    // Calcular vueltas
-    let vueltas = saldo - tePrecio;
+    break;
 
-// Proceso Moccacino
+    case 4:
+
+        // Proceso Moccacino
+
+        alert("Mocaccino")
 
 if (saldo >= mocaccinoPrecio && cafeGr >= 10 && chocolateGr >= 15 && aguaMl >= 50 && lecheMl >= 100 && vasos >= 1)
     // Descontar ingredientes
     {
-        cafeGr = cafeGr - 10 && azucarGr = azucarGr - 5 && aguaMl = aguaMl - 50 && lecheMl = lecheMl - 100 && vasos = vasos - 1
+        cafeGr = cafeGr - 10;
+         azucarGr = azucarGr - 5;
+          aguaMl = aguaMl - 50;
+           lecheMl = lecheMl - 100; vasos = vasos - 1
         console.log("Preparando Mocaccino")
     }
 
@@ -128,15 +154,21 @@ else {
     console.log ("No se puede preparar el mocaccino sorry");
     }
 
-    // Calcular vueltas
-    let vueltas = saldo - mocaccinoPrecio;
+    break;
 
-    // Proceso Cafe Descafeinado
+    case 5:
+
+        // Proceso Cafe Descafeinado
+
+        alert("Cafe descafeinado")
 
 if (saldo >= cafeDescafeinadoPrecio && cafeDescafeinadoGr >= 10 &&  azucarGr >= 5 && aguaMl >= 150 && vasos >= 1)
     // Descontar ingredientes
     {
-        cafedescafeinadoGr = cafedecafeinadoGr - 10 && azucarGr = azucarGr - 5 && aguaMl = aguaMl - 150 && vasos = vasos - 1
+        cafedescafeinadoGr = cafedecafeinadoGr - 10;
+         azucarGr = azucarGr - 5;
+          aguaMl = aguaMl - 150;
+           vasos = vasos - 1
         console.log("Preparando Cafe descafeinado")
     }
 
@@ -144,8 +176,16 @@ else {
     console.log ("No se puede preparar el cafe descafeinado sorry") ;
     }
 
-    // Calcular vueltas
-    let vueltas = saldo - cafeDescafeinadoPrecio;
+    break;
 
- // Procesos con estructuras de control
+    default:
 
+        alert ("Ese producto no esta en el menu")
+        break;
+ }
+
+    // Calcular vueltas 
+
+    // let vueltas = if (saldo > tintoPrecio) {
+      //  saldo - tintoPrecio 
+     
