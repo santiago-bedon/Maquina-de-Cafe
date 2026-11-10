@@ -81,6 +81,7 @@ if (saldo >= tintoPrecio && cafeGr >= 10 && azucarGr >= 5 && aguaMl >= 150 && va
          azucarGr = azucarGr - 5;
           aguaMl = aguaMl - 150;
            vasos = vasos - 1
+           cobrarBebida(tintoPrecio)
         console.log("Preparando tinto")
     }
 
@@ -96,13 +97,14 @@ else {
 
     alert("Cafe con leche")
 
-if (saldo >= cafeConLechePrecio && cafeGr >= 10 && azucarGr >= 5 && aguaMl >= 150 && vasos >= 1)
+if (saldo >= cafeConLechePrecio && cafeGr >= 10 && azucarGr >= 5 && lecheMl >= 150 && vasos >= 1)
     // Descontar ingredientes
     {
         cafeGr = cafeGr - 10;
          azucarGr = azucarGr - 5;
-          lecheMl = lecheMl - 150;
+          lecheGr = lecheGr - 150;
            vasos = vasos - 1
+           cobrarBebida(cafeConLechePrecio)
         console.log("Preparando Cafe con leche")
     }
 
@@ -125,6 +127,7 @@ if (saldo >= tePrecio && teGr >= 10 && azucarGr >= 5 && aguaMl >= 200 && vasos >
          azucarGr = azucarGr - 5;
           aguaMl = aguaMl - 200;
            vasos = vasos - 1 
+           cobrarBebida(tePrecio)
         console.log("Preparando Te")
     }
 
@@ -146,7 +149,9 @@ if (saldo >= mocaccinoPrecio && cafeGr >= 10 && chocolateGr >= 15 && aguaMl >= 5
         cafeGr = cafeGr - 10;
          azucarGr = azucarGr - 5;
           aguaMl = aguaMl - 50;
-           lecheMl = lecheMl - 100; vasos = vasos - 1
+           lecheGr = lecheGr - 100; 
+            vasos = vasos - 1
+            cobrarBebida(mocaccinoPrecio)
         console.log("Preparando Mocaccino")
     }
 
@@ -169,6 +174,7 @@ if (saldo >= cafeDescafeinadoPrecio && cafeDescafeinadoGr >= 10 &&  azucarGr >= 
          azucarGr = azucarGr - 5;
           aguaMl = aguaMl - 150;
            vasos = vasos - 1
+           cobrarBebida(cafeDescafeinadoPrecio)
         console.log("Preparando Cafe descafeinado")
     }
 
@@ -184,6 +190,27 @@ else {
         break;
  }
 
+ // Cobrar bebida
+    function cobrarBebida(){
+        let mensaje;
+        if(saldo >= precio){
+            mensaje = alert("Bebida preparada")
+        }
+        else {
+            alert("Ingresar el valor correcto de la bebida")
+        }
+        return mensaje
+    }
+ // Quiere azucar
+    function añadirAzucar() {
+         let mensaje;
+         if (añadirAzucar = true)
+            mensaje = alert ("Añadiendo azucar")
+        else {
+           mensaje = alert ("Sin azucar")
+        }
+        return mensaje
+    }
     // Calcular vueltas 
 
     // let vueltas = if (saldo > tintoPrecio) {
