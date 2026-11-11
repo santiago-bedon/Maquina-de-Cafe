@@ -1,40 +1,12 @@
-const tinto = "Tinto";
-const cafeConLeche = "Cafe con leche";
-const te = "Te";
-const mocaccino = "Mocaccino";
-const cafeDescafeinado = "Cafe descafeinado";
+//Array con las bebidas
 
-// Tinto
-const cafeTinto = 10;
-const aguaTinto = 150;
-const azucarTinto = 5;
-let tintoPrecio = 2000;
-
-// Cafe con leche
-const cafeCcl = 10;
-const lecheCcl = 100;
-const azucarCcl = 5;
-let cafeConLechePrecio = 3000;
-
-// Te
-const teTe = 10;
-const aguaTe = 200;
-const azucarTe = 5;
-let tePrecio = 2000;
-
-// Mocaccino
-const cafeMoca = 10;
-const chocolateMoca = 15;
-const lecheMoca = 100;
-const aguaMoca = 50;
-let mocaccinoPrecio = 4000;
-
-// Cafe descafeinado
-const cafeDescafeinadoCdesca = 10;
-const aguaCdesca = 150;
-const azucarCdesca = 5;
-let cafeDescafeinadoprecio = 2500;
-
+const bebidas = [
+  { id: 1, nombre: "Tinto",             precio: 2000, cafe: 10, azucar: 5, agua: 150 },
+  { id: 2, nombre: "Cafe con leche",    precio: 3000, cafe: 10, azucar: 5, leche: 100 },
+  { id: 3, nombre: "Te",                precio: 2000, te: 10,   azucar: 5, agua: 200 },
+  { id: 4, nombre: "Mocaccino",         precio: 4000, cafe: 10, chocolate: 15, leche: 100, agua: 50 },
+  { id: 5, nombre: "Cafe descafeinado", precio: 2500, cafeDescafeinado: 10, azucar: 5, agua: 150 }
+];
 // Inventario
 
 let cafeGr = 10000;
@@ -97,12 +69,12 @@ else {
 
     alert("Cafe con leche")
 
-if (saldo >= cafeConLechePrecio && cafeGr >= 10 && azucarGr >= 5 && lecheMl >= 150 && vasos >= 1)
+if (saldo >= cafeConLechePrecio && cafeGr >= 10 && azucarGr >= 5 && lecheGr >= 100 && vasos >= 1)
     // Descontar ingredientes
     {
         cafeGr = cafeGr - 10;
          azucarGr = azucarGr - 5;
-          lecheGr = lecheGr - 150;
+          lecheGr = lecheGr - 100;
            vasos = vasos - 1
            cobrarBebida(cafeConLechePrecio)
         console.log("Preparando Cafe con leche")
@@ -143,7 +115,7 @@ else {
 
         alert("Mocaccino")
 
-if (saldo >= mocaccinoPrecio && cafeGr >= 10 && chocolateGr >= 15 && aguaMl >= 50 && lecheMl >= 100 && vasos >= 1)
+if (saldo >= mocaccinoPrecio && cafeGr >= 10 && chocolateEnPolvoGr >= 15 && aguaMl >= 50 && lecheGr >= 100 && vasos >= 1)
     // Descontar ingredientes
     {
         cafeGr = cafeGr - 10;
@@ -170,7 +142,7 @@ else {
 if (saldo >= cafeDescafeinadoPrecio && cafeDescafeinadoGr >= 10 &&  azucarGr >= 5 && aguaMl >= 150 && vasos >= 1)
     // Descontar ingredientes
     {
-        cafedescafeinadoGr = cafedecafeinadoGr - 10;
+        cafeDescafeinadoGr = cafeDescafeinadoGr - 10;
          azucarGr = azucarGr - 5;
           aguaMl = aguaMl - 150;
            vasos = vasos - 1
@@ -191,7 +163,7 @@ else {
  }
 
  // Cobrar bebida
-    function cobrarBebida(){
+    function cobrarBebida(precio){
         let mensaje;
         if(saldo >= precio){
             mensaje = alert("Bebida preparada")
