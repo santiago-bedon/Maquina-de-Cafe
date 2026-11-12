@@ -32,7 +32,7 @@ let billete10000 = 50;
 
 // Saldo
 
-let saldo = 2000;
+let saldo = 0;
 
 // Selecionar bebida
 
@@ -53,7 +53,7 @@ if (saldo >= tintoPrecio && cafeGr >= 10 && azucarGr >= 5 && aguaMl >= 150 && va
          azucarGr = azucarGr - 5;
           aguaMl = aguaMl - 150;
            vasos = vasos - 1
-           cobrarBebida(tintoPrecio)
+           find (cobrarBebida(tintoPrecio))
         console.log("Preparando tinto")
     }
 
@@ -162,7 +162,8 @@ else {
         break;
  }
 
- // Cobrar bebida
+  // Cobrar bebida
+ let cobrar= parseInt(promt("Ingrese el valor de su bebida"))
     function cobrarBebida(precio){
         let mensaje;
         if(saldo >= precio){
@@ -174,17 +175,18 @@ else {
         return mensaje
     }
  // Quiere azucar
+ let azucar = parseInt(prompt("Quiere azucar 1. Si 2. No"))
     function añadirAzucar() {
-         let mensaje;
-         if (añadirAzucar = true)
-            mensaje = alert ("Añadiendo azucar")
-        else {
-           mensaje = alert ("Sin azucar")
-        }
-        return mensaje
+        let mensaje;
     }
-    // Calcular vueltas 
-
-    // let vueltas = if (saldo > tintoPrecio) {
-      //  saldo - tintoPrecio 
-     
+         switch (azucar){
+            case 1:
+                mensaje = alert("Añadiendo azucar")
+                break;
+         
+            case 2:
+                mensaje = alert("Sin azucar")
+                break;
+         default:
+            mensaje =alert("Opcion no valida")
+    }
