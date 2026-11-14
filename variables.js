@@ -8,7 +8,6 @@ const bebidas = [
   { id: 5, nombre: "Cafe descafeinado", precio: 2500, cafeDescafeinado: 10, azucar: 5, agua: 150 }
 ];
 // Inventario
-
 let cafeGr = 10000;
 let cafeDescafeinadoGr = 5000;
 let chocolateEnPolvoGr = 5000;
@@ -18,6 +17,8 @@ let lecheGr = 10000;
 let aguaMl = 1000000;
 
 let vasos = 150;
+
+const AzucarGr = 5; 
 
 // Dinero
 
@@ -33,6 +34,14 @@ let billete10000 = 50;
 // Saldo
 
 let saldo = 2000;
+
+// Precios (se toman del array bebidas)
+
+const tintoPrecio = bebidas[0].precio;
+const cafeConLechePrecio = bebidas[1].precio;
+const tePrecio = bebidas[2].precio;
+const mocaccinoPrecio = bebidas[3].precio;
+const cafeDescafeinadoPrecio = bebidas[4].precio;
 
 // Selecionar bebida
 
@@ -162,29 +171,16 @@ else {
         break;
  }
 
- // Cobrar bebida
-    function cobrarBebida(precio){
-        let mensaje;
-        if(saldo >= precio){
-            mensaje = alert("Bebida preparada")
-        }
-        else {
-            alert("Ingresar el valor correcto de la bebida")
-        }
-        return mensaje
-    }
- // Quiere azucar
-    function añadirAzucar() {
-         let mensaje;
-         if (añadirAzucar = true)
-            mensaje = alert ("Añadiendo azucar")
-        else {
-           mensaje = alert ("Sin azucar")
-        }
-        return mensaje
-    }
-    // Calcular vueltas 
+ // Cobrar
 
-    // let vueltas = if (saldo > tintoPrecio) {
-      //  saldo - tintoPrecio 
+ function cobrarBebida (precio) {
+    if (saldo < precio){
+        alert("No engañe a la maquinita falta dinero");
+        return false;
+    }
+    saldo = saldo - precio;
+    return true
+ }
+
+    
      
