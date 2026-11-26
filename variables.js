@@ -33,7 +33,7 @@ let billete10000 = 50;
 
 // Saldo
 
-let saldo = 2000;
+let saldo = 5000;
 
 // Precios (se toman del array bebidas)
 
@@ -63,11 +63,10 @@ if (saldo >= tintoPrecio && cafeGr >= 10 && azucarGr >= 5 && aguaMl >= 150 && va
           aguaMl = aguaMl - 150;
            vasos = vasos - 1
            cobrarBebida(tintoPrecio)
-        console.log("Preparando tinto")
     }
 
 else {
-    console.log( "No se puede preparar el tinto sorry");
+    alert( "No se puede preparar el tinto sorry");
     }
 
         break;
@@ -86,11 +85,10 @@ if (saldo >= cafeConLechePrecio && cafeGr >= 10 && azucarGr >= 5 && lecheGr >= 1
           lecheGr = lecheGr - 100;
            vasos = vasos - 1
            cobrarBebida(cafeConLechePrecio)
-        console.log("Preparando Cafe con leche")
     }
 
 else{ 
-    console.log( "No se puede preparar el cafe con leche sorry");
+    alert( "No se puede preparar el cafe con leche sorry");
     }
 
         break;
@@ -109,11 +107,10 @@ if (saldo >= tePrecio && teGr >= 10 && azucarGr >= 5 && aguaMl >= 200 && vasos >
           aguaMl = aguaMl - 200;
            vasos = vasos - 1 
            cobrarBebida(tePrecio)
-        console.log("Preparando Te")
     }
 
 else {
-    console.log( "No se puede preparar el te sorry");
+    alert( "No se puede preparar el te sorry");
     }
 
     break;
@@ -133,11 +130,10 @@ if (saldo >= mocaccinoPrecio && cafeGr >= 10 && chocolateEnPolvoGr >= 15 && agua
            lecheGr = lecheGr - 100; 
             vasos = vasos - 1
             cobrarBebida(mocaccinoPrecio)
-        console.log("Preparando Mocaccino")
     }
 
 else {
-    console.log ("No se puede preparar el mocaccino sorry");
+    alert("No se puede preparar el mocaccino sorry");
     }
 
     break;
@@ -156,11 +152,10 @@ if (saldo >= cafeDescafeinadoPrecio && cafeDescafeinadoGr >= 10 &&  azucarGr >= 
           aguaMl = aguaMl - 150;
            vasos = vasos - 1
            cobrarBebida(cafeDescafeinadoPrecio)
-        console.log("Preparando Cafe descafeinado")
     }
 
 else {
-    console.log ("No se puede preparar el cafe descafeinado sorry") ;
+    alert("No se puede preparar el cafe descafeinado sorry") ;
     }
 
     break;
@@ -173,14 +168,29 @@ else {
 
  // Cobrar
 
- function cobrarBebida (precio) {
-    if (saldo < precio){
-        alert("No engañe a la maquinita falta dinero");
+ function cobrarBebida(precio) {
+
+    alert("El total de su compra es: $" + precio);
+
+    let pago = parseInt(prompt("¿Cuánto dinero va a ingresar?"));
+
+    if (pago >= precio) {
+
+        let cambio = pago - precio;
+
+        saldo = saldo + pago - precio;
+
+        alert("Pago realizado correctamente");
+        alert("Su cambio es: $" + cambio);
+
+        return true;
+
+    } else {
+
+        alert("Dinero insuficiente. No se puede preparar la bebida");
+
         return false;
     }
-    saldo = saldo - precio;
-    return true
- }
-
+}
     
      
